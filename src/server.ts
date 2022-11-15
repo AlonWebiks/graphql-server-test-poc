@@ -55,7 +55,7 @@ export const start = async () => {
     app.use(
         '/graphql',
         expressMiddleware(server, {
-            context: async ({ req }) => ({ token: req.headers.token }),
+        context: async ({ req }) => ({ token: req.headers.token }),
         }),
     );
     await new Promise<void>((resolve) => httpServer.listen({ port: 4000 }, resolve));
